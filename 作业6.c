@@ -31,18 +31,37 @@ int main (void)
 	do{
 		printf("\nHow many years old is this child? ");
 		scanf("%d",&years);
-		if (years < 6){
+		if (years < 6 || years >12){
 			printf("Condition does not fit.\n");
 			continue;
 		}
 		else
 			break;
 	}while(1);
-	printf("How many months since the child's birth? ");
-	scanf("%d",&months);
+	
+	while(1){
+		printf("How many months since the child's birth? ");
+		scanf("%d",&months);
+		if (months < 0 || months > 12){
+			printf("Condition does not fit.\n");
+			continue;
+		}
+		else
+			break;
+	}
+	
 	age = years + months/12.0;
-	printf("Enter the child's height(in inches): ");
-	scanf("%f",&height);
+	
+	while(1){
+		printf("Enter the child's height(in inches): ");
+		scanf("%f",&height);
+		if (height < 0 || height > 200){
+			printf("Condition does not fit.\n");
+			continue;
+		}
+		else
+			break;
+	}
 	
 	normht = norm(age);
 	perdif = pcdif(height,normht);
